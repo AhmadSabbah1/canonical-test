@@ -5,13 +5,14 @@ import Card from './components/Card';
 
 function App() {
 
-  const [cardsData, setCardsData] = useState()
+  const [cardsData, setCardsData] = useState([])
 
   const fetchData = async () => {
     try {
-      if (!cardsData) {
+      if (cardsData.length === 0) {
         const res = await fetch("https://people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json")
         const data = await res.json()
+        console.log(data)
         setCardsData(data)
       }
     } catch (error) {
@@ -23,11 +24,18 @@ function App() {
     fetchData();
   }, [])
 
-
   return (
-    <div className="App">
-      taxim
+    <>
+    <div class="row ">
+    {cardsData.map((card, index) => (
+          <div class="col-4 ">
+            <Card content={card} key={index} />
+          </div>
+      ))}
+
     </div>
+
+    </>
   );
 }
 
