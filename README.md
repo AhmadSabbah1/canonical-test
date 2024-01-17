@@ -9,7 +9,7 @@ To clone the project to your local computer
 
 ### `cd canonical-test`
 
-Navigate to the clone folder
+Navigate to the cloned folder
 
 ### `npm install`
 
