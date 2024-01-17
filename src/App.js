@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from 'react'
 
 function App() {
+
+  const [cardsData, setCardsData] = useState([])
+
+  const fetchData = async() => {
+
+    const res = await fetch("people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json ")
+    console.log(res)
+
+  }
+
+  useEffect(() => {
+
+  }, [])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }
